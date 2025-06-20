@@ -1,0 +1,7 @@
+name: SAH-Drive
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip=21.2.4
+  - nb_conda_kernels

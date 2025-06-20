@@ -1,0 +1,1 @@
+python $SAH_ROOT/nuplan-devkit/nuplan/planning/script/run_nuboard.py

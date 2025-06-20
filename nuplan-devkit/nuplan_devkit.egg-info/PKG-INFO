@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: nuplan-devkit
+Version: 1.2.2
+Summary: The official devkit of the nuPlan dataset (www.nuPlan.org).
+Home-page: https://github.com/motional/nuplan-devkit
+Author: The nuPlan team @ Motional
+Author-email: nuscenes@motional.com
+License: apache-2.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Classifier: License :: Free for non-commercial use
+Requires-Python: >=3.9
+License-File: LICENSE.txt
+
+UNKNOWN
+

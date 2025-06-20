@@ -1,0 +1,3 @@
+[console_scripts]
+nuplan_cli = nuplan.cli.nuplan_cli:main
+

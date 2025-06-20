@@ -1,0 +1,42 @@
+FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
+
+RUN apt-get update \
+    && apt-get install -y curl gnupg2 software-properties-common default-jdk
+
+
+# Download miniconda and install silently.
+ENV PATH=/opt/conda/bin:$PATH
+RUN curl -fsSLo Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && \
+    rm Miniconda3-latest-Linux-x86_64.sh && \
+    conda clean -a -y
+
+# 设置环境变量
+ENV NUPLAN_DATA_ROOT=/root/nuplan/dataset
+ENV NUPLAN_MAPS_ROOT=/root/nuplan/dataset/maps
+ENV NUPLAN_EXP_ROOT=/root/nuplan/exp
+ENV NUPLAN_DEVKIT_ROOT=/root/SAH-Drive/nuplan-devkit
+ENV SAH_ROOT=/root/SAH-Drive
+ENV INTERPLAN_PLUGIN_ROOT=/root/SAH-Drive/interPlan
+
+# 拷贝项目代码
+WORKDIR $SAH_ROOT
+COPY . .
+
+# 创建 Conda 环境
+WORKDIR $NUPLAN_DEVKIT_ROOT
+RUN conda env create -f environment.yml \
+ && echo "conda activate SAH-Drive" >> ~/.bashrc
+
+SHELL ["conda", "run", "-n", "SAH-Drive", "/bin/bash", "-c"]
+
+# 安装 nuplan-devkit
+RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+# 设置容器启动后默认工作目录
+WORKDIR $SAH_ROOT
+
+# 启动 shell，加载 .bashrc（如果你写入了 conda activate 行）
+CMD ["bash", "--login"]
+
