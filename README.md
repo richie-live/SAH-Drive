@@ -117,7 +117,7 @@ scripts/sim_DE_PDM_interplan.sh
 
 ### Acknowledgements
 
-This code is largely based off [nuplan-devkit](https://github.com/motional/nuplan-devkit), [tuplan_garage](https://github.com/autonomousvision/tuplan_garage), [Diffusion-ES](https://github.com/bhyang/diffusion-es), and [interPlan](https://github.com/mh0797/interPlan). Special thanks to the respective authors for making this work possible!
+This code is largely based off [nuplan-devkit](https://github.com/motional/nuplan-devkit), [tuplan_garage](https://github.com/autonomousvision/tuplan_garage), [planTF](https://github.com/jchengai/planTF), [pluto](https://github.com/jchengai/pluto), [Diffusion-ES](https://github.com/bhyang/diffusion-es), and [interPlan](https://github.com/mh0797/interPlan). Special thanks to the respective authors for making this work possible!
 
 If you do find this code useful in your own research, you can cite the paper:
 ```biblatex
