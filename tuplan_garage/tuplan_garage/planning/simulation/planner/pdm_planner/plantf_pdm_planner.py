@@ -416,7 +416,10 @@ class PLANTFPDMPlanner(AbstractPDMPlanner):
 
                 # 用plantf的local代替diffusion的local
                 # 读取 YAML 文件
-                config_path = "/home/fyq/SAH-Drive/tuplan_garage/tuplan_garage/planning/script/config/simulation/planner/planTF.yaml"  # 替换为你的 YAML 文件路径
+                config_path = os.path.join(
+                    os.environ["SAH_ROOT"],
+                    "tuplan_garage/tuplan_garage/planning/script/config/simulation/planner/planTF.yaml"
+                )
                 config = OmegaConf.load(config_path)
 
                 # 实例化 imitation_planner

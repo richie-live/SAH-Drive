@@ -1,11 +1,10 @@
 SPLIT=test14-hard
 CHALLENGE=closed_loop_reactive_agents # open_loop_boxes, closed_loop_nonreactive_agents, closed_loop_reactive_agents
-EXPERIMENT=sim_test14hard_R_planTF_PDM
+EXPERIMENT=sim_planTF_PDM_test14hard_R
 
 python $NUPLAN_DEVKIT_ROOT/nuplan/planning/script/run_simulation.py \
 +simulation=$CHALLENGE \
 planner=plantf_pdm_planner \
-planner.plantf_pdm_planner.checkpoint_path="$SAH_ROOT/SAH_Diffusion_Model/best_model/epoch\=9-step\=9199.ckpt" \
 scenario_builder=nuplan_test \
 scenario_filter=$SPLIT \
 experiment_name=$EXPERIMENT \

@@ -408,7 +408,11 @@ class PLUTOPDMPlanner(AbstractPDMPlanner):
             if self._iteration % self._diffusion_freq == 0:
                 # Use Plantf's local instead of diffusion's local
                 # Reading YAML files
-                config_path = "/home/fyq/SAH-Drive/tuplan_garage/tuplan_garage/planning/script/config/simulation/planner/pluto_planner.yaml"  # replace your YAML path
+                config_path = os.path.join(
+                    os.environ["SAH_ROOT"],
+                    "tuplan_garage/tuplan_garage/planning/script/config/simulation/planner/pluto_planner.yaml"
+                )
+                
                 config = OmegaConf.load(config_path)
 
                 # Instantiate pluto_planner

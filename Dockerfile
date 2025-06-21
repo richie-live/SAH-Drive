@@ -45,6 +45,15 @@ RUN pip install -e .
 WORKDIR $INTERPLAN_PLUGIN_ROOT
 RUN pip install -e .
 
+# install planTF
+WORKDIR $SAH_ROOT/planTF
+RUN pip install -r requirements.txt
+RUN pip install -e .
+
+# install pluto
+WORKDIR $SAH_ROOT/pluto
+RUN pip install -e .
+
 # Set the default working directory after the container starts
 WORKDIR $SAH_ROOT
 

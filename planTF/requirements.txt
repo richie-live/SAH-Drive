@@ -1,0 +1,12 @@
+timm==1.0.11
+pytorch-lightning==2.0.1
+torchmetrics==0.10.2
+tensorboard==2.11.2
+wandb==0.14.2
+numba==0.60.0
+rich==13.3.4
+
+
+--find-links https://shi-labs.com/natten/wheels/cu118/torch2.0.0/index.html
+natten==0.14.6+torch200cu118 
+    

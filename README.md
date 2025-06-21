@@ -99,7 +99,26 @@ To run SAH-Drive on `val14`, run:
 sim_DE_PDM_val14.sh
 ```
 
-Similarly, to validate the SAH paradigm combined with PlanTF+PDM or Pluto+PDM, simply run the corresponding code.
+To validate the SAH paradigm combined with either PlanTF+PDM or Pluto+PDM, simply run the corresponding code after installing the required components.
+
+#### Installing PlanTF
+
+PlanTF has been refactored into a standalone third-party Python package. To install it, run the following commands:
+
+```bash
+cd planTF
+pip install -r requirements.txt
+pip install -e .
+```
+
+#### Installing Pluto
+
+Pluto shares the same dependencies as PlanTF, so there is no need to reinstall them. To install Pluto:
+
+```bash
+cd pluto
+pip install -e .
+```
 
 ### docker
 
