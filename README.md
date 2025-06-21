@@ -106,7 +106,7 @@ Similarly, to validate the SAH paradigm combined with PlanTF+PDM or Pluto+PDM, s
 run docker container
 ```bash
 docker build -t  sah-drive:latest .
-docker run --gpus all -p 5006:5006 -v /home/fyq/nuplan:/root/nuplan --name sah_docker -it sah-drive:latest /bin/bash
+docker run --gpus all -p 5006:5006 -v $HOME/nuplan:/root/nuplan --name sah_docker -it sah-drive:latest /bin/bash
 ```
 
 run according code
